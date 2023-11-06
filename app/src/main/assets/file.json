@@ -1,0 +1,42 @@
+{
+  "Orcs": [
+    {
+      "name": "Orc",
+      "cr": 1,
+      "weight": 5,
+      "xp": 100
+    },
+    {
+      "name": "Orc Veteran",
+      "cr": 4,
+      "weight": 2,
+      "xp": 1100
+    },
+    {
+      "name": "Orc War Chief",
+      "cr": 4,
+      "weight": 1,
+      "xp": 1100
+    }
+  ],
+  "Goblins": [
+    {
+      "name": "Goblin",
+      "weight": 8,
+      "xp": 50,
+      "cr": 1
+    },
+    {
+      "name": "Goblin Boss",
+      "weight": 1,
+      "xp": 200,
+      "cr": 1
+    },
+    {
+      "name": "Hobgoblin",
+      "weight": 4,
+      "xp": 200,
+      "cr": 1
+    }
+  ]
+}
