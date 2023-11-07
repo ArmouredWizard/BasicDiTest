@@ -22,10 +22,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import uk.co.maddwarf.basicditest.composables.MySpinner
 import uk.co.maddwarf.basicditest.navigation.NavigationDestination
 import uk.co.maddwarf.basicditest.R
+import uk.co.maddwarf.basicditest.composables.MyButton
 
 object HomeDestination : NavigationDestination {
     override val route = "home"
@@ -35,6 +37,7 @@ object HomeDestination : NavigationDestination {
 @Composable
 fun HomeScreen(
     modifier: Modifier,
+    navigateToNewScreen: (String) ->Unit,
     homeViewModel: HomeViewModel = hiltViewModel()
 ) {
 
@@ -61,6 +64,7 @@ fun HomeScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
+            navigateToNewScreen = navigateToNewScreen,
             inhabitantsList = inhabitantsList
         )
     }//end Scaffold
@@ -70,6 +74,7 @@ fun HomeScreen(
 @Composable
 fun HomeBody(
     modifier: Modifier,
+    navigateToNewScreen: (String) -> Unit,
     inhabitantsList: List<String>
 ) {
     Log.d("HOME BODY", "Loaded")
@@ -104,6 +109,17 @@ fun HomeBody(
             )
 
         }//end outer row
+        Row(
+            modifier = Modifier
+                .wrapContentWidth()
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 20.dp)
+        ) {
+            MyButton(
+                text = "Go to New Screen",
+                onClick = { navigateToNewScreen(chosenInhabitants) },
+            )
+        }
 
     }//end Box
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BasicDiTest</string>
+    <string name="new_screen_title">New Screen</string>
 </resources>
